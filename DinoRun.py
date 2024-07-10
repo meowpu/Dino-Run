@@ -1,9 +1,6 @@
-print('test1 working')
 from cmu_graphics import *
-print('test2 working')
 spikes=Group(
 )
-print('test3 working')
 app.time=0
 app.stepsPerStep = 120
 app.isMovingUp =False
@@ -22,7 +19,6 @@ Circle(120,180,5,fill='red')
 )
 dinosaur.bottom=300
 def onStep():
-  print('testOnStep')
   if (spikes.hitsShape(dinosaur)):
     app.isAlive=False
   if (app.isAlive==True):
@@ -47,7 +43,6 @@ def onStep():
   for spike in spikes.children:
     if (spike.centerX<=0):
       spikes.remove(spike)
-print('test4 working')
 def onMousePress(x,y):
   if(dinosaur.bottom==300):
     app.isMovingUp=True
@@ -57,6 +52,4 @@ def onMousePress(x,y):
       spikes.clear()
       app.isAlive=True
       app.time=0
-print('test5 working')
 cmu_graphics.run()
-print('test6 working')
